@@ -1,4 +1,4 @@
-package com.gabi.example;
+package com.gabi.example.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
