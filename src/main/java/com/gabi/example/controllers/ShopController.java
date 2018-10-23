@@ -1,4 +1,4 @@
-package com.gabi.example;
+package com.gabi.example.controllers;
 
 import com.gabi.example.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
