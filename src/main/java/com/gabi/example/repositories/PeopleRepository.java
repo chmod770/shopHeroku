@@ -1,4 +1,4 @@
-package com.gabi.example;
+package com.gabi.example.repositories;
 
 import com.gabi.example.models.Person;
 import org.springframework.data.repository.CrudRepository;
