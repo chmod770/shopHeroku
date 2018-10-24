@@ -18,9 +18,9 @@ public class ShopController {
     @Autowired
     public ShopController(PeopleRepository peopleRepository, ItemRepository itemRepository,
                           CategoryRepository categoryRepository){
-        this.peopleRepository = peopleRepository;
-        this.itemRepository = itemRepository;
-        this.categoryRepository = categoryRepository;
+        //this.peopleRepository = peopleRepository;
+        //this.itemRepository = itemRepository;
+        //this.categoryRepository = categoryRepository;
     }
 
     @RequestMapping("hi")
