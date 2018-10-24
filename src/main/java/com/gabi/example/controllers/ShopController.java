@@ -13,7 +13,6 @@ public class ShopController {
 
     @Autowired
     PeopleRepository peopleRepository;
-    //ItemRepository itemRepository;
     //CategoryRepository categoryRepository;
 
     /*@Autowired

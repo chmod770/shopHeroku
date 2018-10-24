@@ -21,8 +21,6 @@ public class Item {
     @Transient
     private MultipartFile imgFile;
 
-
-
     public Item() {
         this.imageLocation="";
     }
