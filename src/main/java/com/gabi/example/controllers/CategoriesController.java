@@ -35,5 +35,7 @@ public class CategoriesController {
         Category category = new Category();
         category.setName(nameCategory);
         categoryRepository.save(category);
+
+        return category;
     }
 }
