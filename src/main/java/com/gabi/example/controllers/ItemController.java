@@ -1,5 +1,6 @@
 package com.gabi.example.controllers;
 
+import com.gabi.example.models.Category;
 import com.gabi.example.models.Item;
 import com.gabi.example.repositories.CategoryRepository;
 import com.gabi.example.repositories.ItemRepository;
@@ -45,9 +46,17 @@ public class ItemController {
     }
 
     @PostMapping("/add")
-    public List<Item> addItem(@RequestBody Item item){
-        itemRepository.save(item);
+    public List<Item> addItem(/*@RequestBody Item item*/){
+        Category newCategory = new Category();
+        newCategory.setName("Ubrania");
+        categoryRepository.save(newCategory);
+        Item newItem = new Item();
+        newItem.setCategory(newCategory);
+        newItem.setName("Koszulka");
+        newItem.setName("Koszulka, rozmiar do wyboru dalej");
+        itemRepository.save(newItem);
         return itemRepository.findAll();
+
     }
 
 }
