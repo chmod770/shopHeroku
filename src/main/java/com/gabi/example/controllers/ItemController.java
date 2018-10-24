@@ -18,7 +18,7 @@ public class ItemController {
     @Autowired
     ItemRepository itemRepository;
 
-    @GetMapping("all/{pageNumber}")
+    @GetMapping("/all/{pageNumber}")
     public Page<Item> getPage(@PathVariable int pageNumber){
         Page<Item> page = itemRepository.findAll(new PageRequest(pageNumber-1,9));
 
