@@ -11,17 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ShopController {
 
-    PeopleRepository peopleRepository;
-    ItemRepository itemRepository;
-    CategoryRepository categoryRepository;
-
     @Autowired
+    PeopleRepository peopleRepository;
+    //ItemRepository itemRepository;
+    //CategoryRepository categoryRepository;
+
+    /*@Autowired
     public ShopController(PeopleRepository peopleRepository, ItemRepository itemRepository,
                           CategoryRepository categoryRepository){
         //this.peopleRepository = peopleRepository;
         //this.itemRepository = itemRepository;
         //this.categoryRepository = categoryRepository;
-    }
+    }*/
 
     @RequestMapping("hi")
     String hello(Model model){
