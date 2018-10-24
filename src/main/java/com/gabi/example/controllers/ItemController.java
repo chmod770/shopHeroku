@@ -46,14 +46,20 @@ public class ItemController {
     }
 
     @PostMapping("/add")
-    public List<Item> addItem(/*@RequestBody Item item*/){
+    public List<Item> addItem(@RequestBody Item item){
+        itemRepository.save(item);
+        return itemRepository.findAll();
+    }
+
+    @PostMapping("/addStick")
+    public List<Item> addItem(){
         Category newCategory = new Category();
         newCategory.setName("Ubrania");
         categoryRepository.save(newCategory);
         Item newItem = new Item();
         newItem.setCategory(newCategory);
         newItem.setName("Koszulka");
-        newItem.setName("Koszulka, rozmiar do wyboru dalej");
+        newItem.setDescription("Koszulka, rozmiar do wyboru dalej");
         itemRepository.save(newItem);
         return itemRepository.findAll();
 
