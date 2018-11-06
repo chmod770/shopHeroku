@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
 @RequestMapping("/api/items")
+@CrossOrigin(origins = {"http://localhost:4200","https://cryptic-escarpment-38413.herokuapp.com"},allowedHeaders = "*")//no access without this
 public class ItemController {
 
     @Autowired

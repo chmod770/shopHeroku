@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
+@CrossOrigin(origins = {"http://localhost:4200","https://cryptic-escarpment-38413.herokuapp.com"},allowedHeaders = "*")//no access without this
 public class CategoriesController {
 
     @Autowired
