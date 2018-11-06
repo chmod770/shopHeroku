@@ -22,7 +22,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/items")
-//@CrossOrigin(origins = {"86.111.102.219", "https://cryptic-escarpment-38413.herokuapp.com"},allowedHeaders = "*")//no access without this
+@CrossOrigin(origins = {"https://cryptic-escarpment-38413.herokuapp.com"},allowedHeaders = "*")//no access without this
 public class ItemController {
 
     @Autowired
@@ -120,6 +120,11 @@ public class ItemController {
             return itemRepository.findByCategory(optionalCategory.get());
         }
         return null;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public boolean deleteItemWithId(@PathVariable int id){
+        return itemRepository.deleteItemById(id);
     }
 
 }

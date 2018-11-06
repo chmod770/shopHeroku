@@ -9,4 +9,5 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item, Integer>{
     List<Item> findByIsPromoted(boolean isPromoted);
     List<Item> findByCategory(Category category);
+    boolean deleteItemById(int id);
 }
