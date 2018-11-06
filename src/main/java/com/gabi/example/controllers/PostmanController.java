@@ -14,7 +14,13 @@ public class PostmanController {
 
     @DeleteMapping("/delete/{id}")
     public boolean deleteItemWithId(@PathVariable int id){
-        return itemRepository.deleteItemById(id);
+        try{
+            itemRepository.delete(itemRepository.findOneById(id));
+            return true;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
     }
 
     @PostMapping("/add")
