@@ -1,7 +1,6 @@
 package com.gabi.example.controllers;
 
 import com.gabi.example.models.Category;
-import com.gabi.example.models.Item;
 import com.gabi.example.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
