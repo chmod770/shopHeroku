@@ -39,7 +39,6 @@ public class ItemController {
     @GetMapping("/all/{pageNumber}")
     public Page<Item> getPage(@PathVariable int pageNumber){
         Page<Item> page = itemRepository.findAll(new PageRequest(pageNumber-1,9));
-
         return page;
     }
 
@@ -71,6 +70,7 @@ public class ItemController {
         Item newItem = new Item();
         newItem.setCategory(newCategory);
         newItem.setName("Koszulka");
+        newItem.setImageLocation("https://taternik-sklep.pl/media/products/a7cd30890cc6a1eac5fdb744970e1b7f/images/thumbnail/large_Koszulka-w-s-La-Sportiva-For-your-Mountain-T-shirt-SS-jade-green-2.jpg?lm=1541497682");
         newItem.setDescription("Koszulka, rozmiar do wyboru dalej");
         itemRepository.save(newItem);
         return itemRepository.findAll();
@@ -119,6 +119,16 @@ public class ItemController {
         if(optionalCategory.isPresent()) {
             return itemRepository.findByCategory(optionalCategory.get());
         }
+        return null;
+    }
+
+    @GetMapping("/itemsPageWithCategoryId/{categoryId}/{pageId}")
+    public Page<Item> getItemsPageWithCategoryId(@PathVariable int categoryId,@PathVariable int pageNumber){
+        Optional<Category> optionalCategory = categoryRepository.findById(categoryId);
+        if(optionalCategory.isPresent()) {
+            return itemRepository.findAllByCategory(optionalCategory.get(), new PageRequest(pageNumber-1,9));
+        }
+
         return null;
     }
 
