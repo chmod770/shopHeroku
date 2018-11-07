@@ -122,8 +122,8 @@ public class ItemController {
         return null;
     }
 
-    @GetMapping("/itemsPageWithCategoryId/{categoryId}/{pageId}")
-    public Page<Item> getItemsPageWithCategoryId(@PathVariable int categoryId,@PathVariable int pageNumber){
+    @GetMapping("/itemsPageWithCategoryId/{categoryId}/{pageNumber}")
+    public Page<Item> getItemsPageWithCategoryId(@PathVariable int categoryId, @PathVariable int pageNumber){
         Optional<Category> optionalCategory = categoryRepository.findById(categoryId);
         if(optionalCategory.isPresent()) {
             return itemRepository.findAllByCategory(optionalCategory.get(), new PageRequest(pageNumber-1,9));
