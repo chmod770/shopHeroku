@@ -128,7 +128,6 @@ public class ItemController {
         if(optionalCategory.isPresent()) {
             return itemRepository.findAllByCategory(optionalCategory.get(), new PageRequest(pageNumber-1,9));
         }
-
         return null;
     }
 
